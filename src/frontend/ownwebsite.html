@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vithal Sanagoudar - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Angular and other required libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="portfolioApp" ng-controller="MainController">
+
+<!-- Header Section -->
+<header>
+    <h1>Vithal Sanagoudar</h1>
+    <p>Java Backend Developer | Angular Frontend Enthusiast</p>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am a skilled Java Backend Developer with expertise in Spring Boot, Hibernate, REST APIs, and microservices. With over 2.8 years of experience, I have worked on modern web applications and enjoy building scalable and efficient systems.</p>
+</section>
+
+<!-- Resume Section -->
+<section id="resume">
+    <h2>Resume</h2>
+    <a href="resume/vithal_sanagoudar_resume.pdf" download>Download My Resume</a>
+    <p>Explore my career journey and technical skills by downloading my resume.</p>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>Java, Spring Boot, Hibernate JPA</li>
+        <li>REST APIs, Microservices</li>
+        <li>Angular, TypeScript, HTML, CSS</li>
+        <li>MySQL, Maven, Git</li>
+        <li>Agile Scrum, Unit Testing (JUnit), Form Validation</li>
+    </ul>
+</section>
+
+<!-- Connections Section -->
+<section id="connections">
+    <h2>Connect With Me</h2>
+    <ul>
+        <li>Email: <a href="mailto:vittalvts@gmail.com">vittalvts@gmail.com</a></li>
+        <li>Phone: <a href="tel:+919945036575">+91 99450 36575</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/vithalsanagoudar">linkedin.com/in/vithalsanagoudar</a></li>
+        <li>GitHub: <a href="https://github.com/vithalsanagoudar">github.com/vithalsanagoudar</a></li>
+    </ul>
+</section>
+
+<!-- Contact Form (Optional) -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form ng-submit="submitForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" ng-model="contact.name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" ng-model="contact.email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" ng-model="contact.message" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<script>
+        var app = angular.module('portfolioApp', []);
+        app.controller('MainController', ['$scope', function($scope) {
+            $scope.contact = {};
+            $scope.submitForm = function() {
+                alert('Thank you, ' + $scope.contact.name + '! Your message has been sent.');
+                // Here, add backend integration to save or send the message
+            };
+        }]);
+    </script>
+</body>
+</html>
